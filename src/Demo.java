@@ -29,9 +29,12 @@ public class Demo {
         robot.keyRelease(KeyEvent.VK_TAB);
 
 
+        double secondsPerUpdate = 1.0 / 30.0;
+
+
         //terrible idea need to use something like jframe so it doesn't take up tons of cpu
         while(true) {
-            System.out.println("test");
+            System.out.println("current time in seconds: " + getCurrentTime());
         }
 
 //        //end video and livestream
@@ -47,5 +50,12 @@ public class Demo {
 //        robot.keyRelease(KeyEvent.VK_TAB);
 
 
+    }
+
+    public static double getCurrentTime() {
+
+        double tenPowerNine = 1_000_000_000;
+
+        return System.nanoTime() / tenPowerNine;
     }
 }

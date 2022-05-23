@@ -1,37 +1,33 @@
 import java.util.ArrayList;
 import java.util.Timer;
 
-public class Video implements Time {
+public class Video {
 
-    private long startTime;
-    private long endTime;
-    private long duration;
+    private double startTime;
+    private double endTime;
+    private double duration;
 
     private ArrayList<Sequence> clips = new ArrayList<>(10);
 
 
     public Video() {
-        setStartTime(getCurrentTime());
+        setStartTime(Time.getCurrentTime());
     }
 
-    public long getStartTime() {
+    public double getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(long startTime) {
+    public void setStartTime(double startTime) {
         this.startTime = startTime;
     }
 
-    @Override
-    public long getCurrentTime() {
-        return System.currentTimeMillis();
-    }
 
-    public long getEndTime() {
+    public double getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(long endTime) {
+    public void setEndTime(double endTime) {
         this.endTime = endTime;
     }
 

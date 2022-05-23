@@ -1,39 +1,39 @@
 /**
  * sequence has to be in-reference to endTime that is to say the time at which the user has clipped the recording.
  */
-public class Sequence implements Time {
+public class Sequence {
 
-    private long startTime;
-    private long endTime;
+    private double startTime;
+    private double endTime;
     private Video video;
 
-    public Sequence(long endTime, Video video) {
+    public Sequence(double endTime, Video video) {
         this.video = video;
         this.startTime = 0;
-        setEndTime(getCurrentTime());
+        setEndTime(Time.getCurrentTime());
 
     }
 
-    public long getStartTime() {
+    public double getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(long startTime) {
+    public void setStartTime(double startTime) {
         this.startTime = startTime;
     }
 
-    public long getEndTime() {
+    public double getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(long endTime) {
+    public void setEndTime(double endTime) {
         this.endTime = endTime;
         video.setEndTime(endTime);
 
     }
 
-    @Override
-    public long getCurrentTime() {
+
+    /*public long getCurrentTime() {
         return System.currentTimeMillis();
-    }
+    }*/
 }
