@@ -38,4 +38,11 @@ public class Video {
                 ", endTime=" + endTime +
                 '}';
     }
+
+    //assuming its in seconds from the start of the video.
+    public double getElapsedTime() {
+        double currentTime = Time.getCurrentTime();
+        return currentTime - startTime;
+
+    }
 }
